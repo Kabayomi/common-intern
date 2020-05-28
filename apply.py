@@ -21,21 +21,21 @@ URLS = [URL_g1, URL_l4, URL_l3, URL_l6, URL_l8, URL_l9]
 
 # Fill in this dictionary with your personal details!
 JOB_APP = {
-    "first_name": "Harshi",
-    "last_name": "Bar",
-    "email": "info.harshibar@gmail.com",
-    "phone": "123-456-7890",
+    "first_name": "Abayomi",
+    "last_name": "Koyejo",
+    "email": "kabayomi007@gmail.com",
+    "phone": "+7 (903) 387 79 02",
     "org": "Self-Employed",
     "resume": "resume.pdf",
     "resume_textfile": "resume_short.txt",
-    "linkedin": "https://www.linkedin.com/",
-    "website": "www.youtube.com/harshibar",
-    "github": "https://github.com/harshibar",
+    "linkedin": "https://www.linkedin.com/in/koyejoabayomi",
+    "website": "www.kabayomi.com",
+    "github": "https://github.com/kabayomi",
     "twitter": "www.twitter.com",
-    "location": "San Francisco, California, United States",
+    "location": "Moscow, Russia. Remote.",
     "grad_month": '06',
-    "grad_year": '2021',
-    "university": "MIT" # if only o.O
+    "grad_year": '2020',
+    "university": "Skolkovo Institute of Science and Technology" # if only o.O
 }
 
 # Greenhouse has a different application form structure than Lever, and thus must be parsed differently
@@ -79,7 +79,7 @@ def greenhouse(driver):
 
     # add graduation year
     try:
-        driver.find_element_by_xpath("//select/option[text()='2021']").click()
+        driver.find_element_by_xpath("//select/option[text()='2020']").click()
     except NoSuchElementException:
         pass
 
@@ -91,13 +91,13 @@ def greenhouse(driver):
 
     # add degree
     try:
-        driver.find_element_by_xpath("//select/option[contains(.,'Bachelor')]").click()
+        driver.find_element_by_xpath("//select/option[contains(.,'Master')]").click()
     except NoSuchElementException:
         pass
 
     # add major
     try:
-        driver.find_element_by_xpath("//select/option[contains(.,'Computer Science')]").click()
+        driver.find_element_by_xpath("//select/option[contains(.,'Engineering')]").click()
     except NoSuchElementException:
         pass
 
