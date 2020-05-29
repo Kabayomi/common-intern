@@ -85,7 +85,7 @@ def greenhouse(driver):
 
     # add university
     try:
-        driver.find_element_by_xpath("//select/option[contains(.,'Harvard')]").click()
+        driver.find_element_by_xpath("//select/option[contains(.,'Skoltech')]").click()
     except NoSuchElementException:
         pass
 
@@ -169,7 +169,7 @@ if __name__ == '__main__':
     print(f'Job Listings: {aggregatedURLs}')
     print('\n')
 
-    driver = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver')
+    driver = webdriver.Chrome(executable_path=r'C:\Users\kabay\Desktop\jobs\common-intern\c\chromedriver_win32.exe')
     for url in aggregatedURLs:
         print('\n')
 

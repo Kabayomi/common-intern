@@ -37,7 +37,7 @@ def login(driver):
 def go_to_listings(driver):
 
     # wait for the search bar to appear
-    element = WebDriverWait(driver, 20).until(
+    element = WebDriverWait(driver, 30).until(
             EC.presence_of_element_located((By.XPATH, "//*[@id='scBar']"))
         )
 
@@ -53,7 +53,7 @@ def go_to_listings(driver):
         location_field.send_keys(PREFERENCES['location'])
 
         # wait for a little so location gets set
-        time.sleep(1)
+        time.sleep(2)
         driver.find_element_by_xpath(" //*[@id='scBar']/div/button").click()
 
         # close a random popup if it shows up
@@ -77,7 +77,7 @@ def aggregate_links(driver):
             EC.presence_of_element_located((By.XPATH, "//*[@id='MainCol']/div[1]/ul"))
         )
 
-    time.sleep(5)
+    time.sleep(20)
 
     # parse the page source using beautiful soup
     page_source = driver.page_source
